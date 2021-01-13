@@ -1,48 +1,46 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# The Developer Experience Manifesto
 
-## 🚀 Quick start
+![](src/images/workstation.svg)
 
-1.  **Create a Gatsby site.**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+###  [https://dxmanifsto.dev](https://dxmanifesto.dev) :computer:
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+## Quick Start
 
-2.  **Start developing.**
+1. Clone this repo
+2. `yarn install`
+3. `yarn start`
 
-    Navigate into your new site’s directory and start it up.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
 
-3.  **Open the code and start customizing!**
+## :wave: Contributing
 
-    Your site is now running at http://localhost:8000!
+### :page_with_curl: `manifesto.yaml`
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+If you want to contribute to the manifesto, edit `manifesto.yaml` and suggest your pull request. A few notes to remember:
 
-4.  **Learn more**
+* Typos, english corrections - more than welcome
+* Bullet additions - will be requiring a deeper review. We want to keep it DRY, simple, and it should be a significant enough addition in its insight/practice to get in.
+* Category addition - same process as in bullet additions, just be mindful that we can't have too many categories (we want to keep a reasonable size).
+* Misc - if you do add items, have good references if you can.
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+When in doubt, you can always open an issue to discuss _before_ opening a new PR.
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+###  :information_desk_person: `people.yaml`
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+If you're very passionate about developer experience, and are dealing with the subject in your day-to-day, you can suggest yourself to be included (submit a PR). Not all PRs will be accepted.
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+### :factory: `companies.yaml`
+
+If you represent a company, you can add a PR to add your company logo. Some criteria:
+
+1. This company has to develop a product that is meant for developers, _or_, this company is known for _caring_ about developer experience (invests significant time in building tools, and processes)
+2. We don't need any sponsorship funds _yet_ so we are not accepting sponsorshipts. But if you would like to sponsor -- let us know
+
+
+## :star2: Code of Conduct
+
+Please note that we have our [code of conduct](CODE_OF_CONDUCT.md). Let's create a pleasant atmosphere for everyone.

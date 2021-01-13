@@ -1,149 +1,182 @@
-import * as React from "react"
+/** @jsx jsx */
+import * as React from 'react'
+import L from 'lodash'
+import { jsx, Box, Flex, Heading, Text, Link } from 'theme-ui'
+import workstation from '../images/workstation.svg'
+import bp from '../images/bp.svg'
+import standard from '../images/standards.svg'
+import discuss from '../images/discuss.svg'
+
+import {
+  Logo,
+  Person,
+  Value,
+  Section,
+  Row,
+  Col,
+  ManifestoItem,
+} from '../components'
+import Layout from './layout'
+
+import manifesto from '../../manifesto.yaml'
+import groups from '../../people.yaml'
+import companies from '../../companies.yaml'
 
 // styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: "300",
-  fontSize: "24px",
-  maxWidth: "560px",
-}
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: "16px",
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: "14px",
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-// data
-const links = [
+const menu = [
+  { title: 'Manifesto', href: '#manifesto' },
+  { title: 'People', href: '#people' },
+  { title: 'Github', href: 'https://github.com/dx-m/dx-manifesto' },
+]
+const values = [
   {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
+    title: 'Best practices',
+    description: 'That you should know while building developer tools',
+    image: bp,
   },
   {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
+    title: 'A convenient standard',
+    description: 'That you can apply for your developer productivity teams',
+    image: standard,
   },
   {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#000000",
+    title: 'Encourage discussion',
+    description: 'For continous improvement and focus on applied productivity',
+    image: discuss,
   },
 ]
 
 // markup
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
+    <Layout>
+      <Section sx={{ my: '32px' }}>
+        <Flex>
+          <Box sx={{ flex: 1 }}>
+            <Logo />
+          </Box>
+          <Flex sx={{ alignItems: 'center' }}>
+            {menu.map(({ title, href }) => (
+              <Link sx={{ ml: '24px' }} variant="nav" href={href}>
+                {title}
+              </Link>
+            ))}
+          </Flex>
+        </Flex>
+      </Section>
+      <Section sx={{ my: '128px' }}>
+        <Row>
+          <Col sx={{ pr: '32px', pt: '32px' }}>
+            <Heading variant="headingLarge">
+              The Developer Experience Manifesto
+            </Heading>
+            <Text variant="bodyLarge">
+              How to build amazing tools, that are productive, empowering,
+              simple, and make developers happy.
+            </Text>
+          </Col>
+          <Col sx={{ width: ['100%', '50%'] }}>
+            <img src={workstation} alt="" />
+          </Col>
+        </Row>
+      </Section>
+      <Section sx={{ my: '128px' }}>
+        <Heading sx={{ textAlign: 'center' }} variant="headingSuppressed">
+          These companies care about developer experience:
+        </Heading>
+        <Flex sx={{ justifyContent: 'center' }}>
+          {companies.map((c) => (
+            <img {...c} alt="" />
+          ))}
+        </Flex>
+      </Section>
+      <Section sx={{ my: '128px' }}>
+        <Heading sx={{ textAlign: 'center' }} variant="headingNormal">
+          What do I gain by following this manifesto?
+        </Heading>
+        <Row>
+          {values.map((v) => (
+            <Col>
+              <Value {...v} />
+            </Col>
+          ))}
+        </Row>
+      </Section>
+      <Section sx={{ my: '128px' }}>
+        <Heading sx={{ textAlign: 'center' }} variant="headingNormal">
+          <Link href="#people" sx={{ color: 'text' }} name="people">
+            Who is behind this manifesto?
+          </Link>
+        </Heading>
+        {groups.map((people) => (
+          <Row>
+            {people.map((p, i) => (
+              <Col
+                sx={{
+                  pt: i % 2 ? '32px' : ['32px', null, '0px'],
+                  px: ['8px', null, '24px'],
+                  width: ['100%', '50%'],
+                }}
               >
-                {link.text}
-              </a>
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
+                <Person {...p} />
+              </Col>
+            ))}
+          </Row>
         ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
+      </Section>
+      <Section sx={{ my: '128px' }}>
+        <Heading sx={{ textAlign: 'center' }} variant="headingLarge">
+          <Link sx={{ color: 'text' }} href="#manifesto" name="manifesto">
+            The Deveoper Experience Manifesto
+          </Link>
+        </Heading>
+        {L.chunk(manifesto, 2).map((pair) => (
+          <Row>
+            {pair.map((item) => (
+              <Col sx={{ px: ['8px', null, '24px'] }}>
+                <ManifestoItem {...item} sx={{ mb: '48px' }} />
+              </Col>
+            ))}
+          </Row>
+        ))}
+      </Section>
+      <Box sx={{ background: 'footer', color: 'inverse', py: '64px' }}>
+        <Section>
+          <Row>
+            <Col
+              sx={{
+                width: ['100%', null, '50%'],
+                px: '16px',
+                mb: '32px',
+                alignItems: ['center', null, 'flex-end'],
+              }}
+              size={6}
+            >
+              <Logo color="white" />
+            </Col>
+            <Col
+              sx={{
+                width: ['100%', null, '50%'],
+                alignItems: ['center', null, 'flex-start'],
+                px: '16px',
+              }}
+              size={6}
+            >
+              <Flex sx={{ flexDirection: 'column' }}>
+                {menu.map(({ title, href }) => (
+                  <Box sx={{ mb: '16px' }}>
+                    <Link variant="footer" href={href}>
+                      {title}
+                    </Link>
+                  </Box>
+                ))}
+              </Flex>
+            </Col>
+          </Row>
+        </Section>
+      </Box>
+    </Layout>
   )
 }
 

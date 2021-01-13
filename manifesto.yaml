@@ -1,0 +1,147 @@
+---
+- index: '01'
+  title: Keep it responsive
+  bullets:
+  - title: Apply UX response time principles to DX
+    description: 'Apply UX principle to DX: 100ms for instant feel, 1s for keeping
+      flow of thought, 10s for avoiding context switch'
+    references:
+    - title: "Response Times: The 3 Important Limits"
+      href: https://www.nngroup.com/articles/response-times-3-important-limits
+  - title: Don't hold up developer services
+    description: 'Many development services are metered by the minute, and time here is literally money'
+    references:
+    - title: "CI metering example (Github)"
+      href: https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-billing-and-payments-on-github/about-billing-for-github-actions
+  - title: Remember that you might participate in a feedback cycle
+    description: 'Many development services are metered by the minute, and time here is literally money'
+    references:
+    - title: TDD Development Cycle
+      href: https://en.wikipedia.org/wiki/Test-driven_development#Test-driven_development_cycle
+  - title: If you can't make it responsive, make it feel responsive
+    description: Software may have heavy update cycles, however downloading over night or creating a patch update tricks us into feeling that it's fast
+- index: '02'
+  title: Keep it simple
+  bullets:
+  - title: Focus on principles and not details
+    description: 'Continuously seek where you can eliminate "required knowledge" from successful usage'
+  - title: Follow the pit of success
+    description: 'Success is often portrayed as hard as climbing a mountain. Great experience should feel effortless, like falling into a pit'
+    references:
+    - title: "The pit of success"
+      href: https://blog.codinghorror.com/falling-into-the-pit-of-success/
+  - title: 'Avoid bloat: keep only the deps that you need'
+    description: When adding dependencies, make sure you have a process to remove or modernize old ones, so that you can avoid bloat
+  - title: Accept that developers are lazy (a good thing)
+    description: 'Make the introductory tasks trivial and advanced ones simple'
+    references:
+    - title: "Developers are lazy and that's usually a good thing"
+      href: https://www.forbes.com/sites/forbestechcouncil/2018/01/08/developers-are-lazy-and-thats-usually-a-good-thing
+  - title: Keep your sizes under check
+    description: Size is often a lead indicator of complexity - binary size, install size, download size, and more; make sure that what you deliver is free of extra bloat
+    references:
+    - title: "A story of a big Go binary"
+      href: https://jondot.medium.com/a-story-of-a-fat-go-binary-20edc6549b97
+- index: '03'
+  title: Work with humans
+  bullets:
+  - title: Offer help and contextual help
+    description: 'Depends on the platform, create the appropriate just-in-time help: manpages, help screen and autocomplete'
+    references:
+    - title: Manpages (Wikipedia)
+      href: https://en.wikipedia.org/wiki/Man_page
+    - title: POSIX format
+      href: https://stackoverflow.com/questions/16820245/is-help-flag-a-posix-standard-recommendation
+    - title: Bash autocompletion
+      href: https://iridakos.com/programming/2018/03/01/bash-programmable-completion-tutorial
+  - title: Create and maintain live examples
+    description: "If applicable: a good practice is to keep an /examples folder in your Github repo, or live Codepen examples for other cases"
+  - title: Have best in class documentation
+    description: Have purpose built documentation for your tool, or even a website
+    references:
+    - title: Docusaurus
+      href: https://v2.docusaurus.io/
+  - title: Maintain visible context
+    description: 'Offer version and other contextual information to send when communicating to a colleague'
+  - title: Output simple error messages
+    description: 'When communicating errors and exception cases, use simple language, and offer a link for extra help if possible'
+  - title: Respect SemVer (or similar)
+    description: 'Have predictable version and change policy that would not surprise people'
+    references:
+    - title: SemVer cheatsheet
+      href: 'https://devhints.io/semver'
+
+
+- index: '04'
+  title: Work with machines
+  bullets:
+  - title: Allow for pluggability, extension, and composition
+    description: 'Where possible make your tool pluggable, open for extension, or composition (see the UNIX philosophy as one example)'
+    references:
+    - title: The UNIX philosophy (Wikipedia)
+      href: https://en.wikipedia.org/wiki/Unix_philosophy
+  - title: Respect the operating system
+    description: "Don't ignore common operating-system principles. Such as text on STDOUT, errors on STDERR, or no emojis on Windows (yet)"
+  - title: Have parseable output
+    description: "A tool conversing well with humans, should converse with machines as well. For that we need predictable, formatted, and typed output"
+    references:
+    - title: JSON Schema (for specifying output formats)
+      href: https://json-schema.org/
+    - title: TAP - human+machine format (Wikipedia)
+      href: https://en.wikipedia.org/wiki/Test_Anything_Protocol
+  - title: Support configuration in many ways
+    description: Accept arguments or configuration though flags, environment variables and/or configuration files
+    references:
+    - title: Viper has definition and many sources
+      href: https://github.com/spf13/viper
+
+- index: '05'
+  title: Plan your architecture
+  bullets:
+  - title: Keep commands flexible, structure predictable
+    description: 'When building CLIs, set up an architecture for commands, with a predictable grammer (noun verb - `post create`, or verb noun `create post`)'
+    references:
+    - title: oclif - a well architected CLI toolkit
+      href: https://oclif.io/
+  - title: Don't do too many things
+    description: 'Similar to other software systems, keep your tool under checks and balances. Identify when it needs to split into several different tools'
+  - title: Enable testability
+    description: Sometimes your tool will be a part of a testing suite. Make sure you play well in that scenario - the best way is to dogfood.
+    references:
+    - title: aruba - CLI testing framework
+      href: https://github.com/cucumber/aruba
+  - title: Model into core and interfaces
+    description: Make sure you have a core that can be wrapped and used in many different ways. Have a clear API for that, for example, so that you could (if you wanted) support plugins.
+  - title: If possible, use existing work
+    description: Some communities already have starters, kits, and boilerplates. Find the good ones and start from there
+    references:
+    - title: Golang reference project layout
+      href: https://github.com/golang-standards/project-layout
+
+- index: '06'
+  title: Be considerate
+  bullets:
+  - title: Respect the hardware you're running on
+    description: 'Be mindful of the kind of hardware you are running on, or will be running on. What are the limits or what is already in stress? RAM (for example, Raspberry Pi), CPU?, network?, IO?'
+  - title: Respect the user's time
+    description: 'Offer logging with levels (debug, verbose, info, warn, error), or a good debugging story in general'
+  - title: No tracking or spying
+    description: "Try your best not to intentionally track or spy on end users, especially if they are developers which deal with sensitive data, naturally"
+    references:
+    - title: Kite discussion around tracking
+      href: https://www.reddit.com/r/programming/comments/6qwtfz/kite_injected_telemetry_into_the_third_most/
+  - title: Offer more convention over configuration
+    description: Respect your users by offering sane and safe defaults, by convention. With that, do give ways to override with configuration
+    references:
+    - title: Convention over configuration (Wikipedia)
+      href: https://en.wikipedia.org/wiki/Convention_over_configuration
+  - title: Don't break existing things
+    description: No body likes a tool that installs and breaks a few other tools afterwards. Try not to do that and be mindful of what you could break, or package your tool in a way that can break nothing (Docker container)
+    references:
+    -  title: Stack Overflow "breaks after install"
+       href: https://stackoverflow.com/search?q=breaks+after+install
+  - title: Try not to surprise your users
+    description: Software updates can be one nasty surprise if not done right. Let your users know about updates, if possible offer to opt-into update risk levels (e.g. stable, beta, canary)
+  
+
+

@@ -1,0 +1,17 @@
+---
+- - photo: https://placehold.it/60x60
+    name: Dotan Nahum
+    title: Founder @ Spectral
+  - photo: https://placehold.it/60x60
+    name: Uri Shamay
+    title: Founder @ Spectral
+- - photo: https://en.gravatar.com/userimage/149528499/213203161f2fe2a2ae3a6a2c8d701112.png?size=200
+    name: Igor Davydkin
+    title: Tech Lead @ Climacell
+  - photo: https://pbs.twimg.com/profile_images/1303968187910819849/XbHyZash_400x400.jpg
+    name: Lee Briggs
+    title: Community Engineer @ Pulumi
+    quote: If you’re asking your developers to learn a whole new tool to get their job done, you’re handing them a problem, not a solution.
+- - photo: https://miro.medium.com/fit/c/262/262/2*0M2GEkNa_nORlvlJAA6JlA.jpeg
+    name: Avi Perez
+    title: Head of Backend Engineering @ Wix

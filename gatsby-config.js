@@ -1,23 +1,24 @@
 module.exports = {
   siteMetadata: {
-    title: "The Developer Experience Manifesto",
+    title: 'The Developer Experience Manifesto',
+    siteUrl: 'https://dxmanifesto.dev',
   },
+
   plugins: [
-    "gatsby-plugin-theme-ui",
+    'gatsby-plugin-theme-ui',
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "GA-XXX",
+        trackingId: 'GA-XXX',
       },
     },
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-offline",
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: "src/images/icon.png",
+        icon: 'src/images/icon.png',
       },
     },
   ],
-};
+}

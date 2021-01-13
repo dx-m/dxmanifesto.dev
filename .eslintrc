@@ -1,0 +1,72 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": [
+    "jest",
+    "react-hooks",
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.spec.[tj]s"
+        ]
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "class-methods-use-this": 0,
+    "@typescript-eslint/explicit-member-accessibility": 0,
+    "react/prop-types": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/member-delimiter-style": 0,
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/indent": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "singleQuote": true
+      }
+    ],
+    "prettier/semi": 0,
+    "space-before-function-paren": 0,
+    "comma-dangle": 0,
+    "jsx-quotes": 0,
+    "react/jsx-filename-extension": "off"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "jest/globals": true
+  },
+  "globals": {
+    "fetch": true,
+    "navigator": true,
+    "__DEV__": true,
+    "XMLHttpRequest": true,
+    "React$Element": true,
+    "Generator": true
+  }
+}
