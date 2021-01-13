@@ -1,10 +1,12 @@
 ---
-- - photo: https://placehold.it/60x60
+- - photo: https://miro.medium.com/fit/c/262/262/1*oKuxr_H27BMxHXMtdUDmwg.png
     name: Dotan Nahum
     title: Founder @ Spectral
-  - photo: https://placehold.it/60x60
+    quote: One thing that makes software engineering special is that we can fabricate tools out of thin air, to empower other engineers around us.
+  - photo: https://miro.medium.com/fit/c/680/680/1*LWAOKuRAsTV8ac7-DiEKUA.png
     name: Uri Shamay
     title: Founder @ Spectral
+    quote: Developer experience should get a better exposure. There are principles, practices, and eventually it is a craft that we should all share.
 - - photo: https://en.gravatar.com/userimage/149528499/213203161f2fe2a2ae3a6a2c8d701112.png?size=200
     name: Igor Davydkin
     title: Tech Lead @ Climacell

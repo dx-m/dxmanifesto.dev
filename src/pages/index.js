@@ -22,7 +22,7 @@ import manifesto from '../../manifesto.yaml'
 import groups from '../../people.yaml'
 import companies from '../../companies.yaml'
 
-// styles
+const showCompanies = false
 
 const menu = [
   { title: 'Manifesto', href: '#manifesto' },
@@ -81,16 +81,18 @@ const IndexPage = () => {
           </Col>
         </Row>
       </Section>
-      <Section sx={{ my: '128px' }}>
-        <Heading sx={{ textAlign: 'center' }} variant="headingSuppressed">
-          These companies care about developer experience:
-        </Heading>
-        <Flex sx={{ justifyContent: 'center' }}>
-          {companies.map((c) => (
-            <img {...c} alt="" />
-          ))}
-        </Flex>
-      </Section>
+      {showCompanies && (
+        <Section sx={{ my: '128px' }}>
+          <Heading sx={{ textAlign: 'center' }} variant="headingSuppressed">
+            These companies care about developer experience:
+          </Heading>
+          <Flex sx={{ justifyContent: 'center' }}>
+            {companies.map((c) => (
+              <img {...c} alt="" />
+            ))}
+          </Flex>
+        </Section>
+      )}
       <Section sx={{ my: '128px' }}>
         <Heading sx={{ textAlign: 'center' }} variant="headingNormal">
           What do I gain by following this manifesto?
@@ -114,9 +116,9 @@ const IndexPage = () => {
             {people.map((p, i) => (
               <Col
                 sx={{
-                  pt: i % 2 ? '32px' : ['32px', null, '0px'],
                   px: ['8px', null, '24px'],
                   width: ['100%', '50%'],
+                  mb: '32px',
                 }}
               >
                 <Person {...p} />

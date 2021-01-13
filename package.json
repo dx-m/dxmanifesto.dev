@@ -28,8 +28,10 @@
     "theme-ui": "^0.3.5"
   },
   "devDependencies": {
+    "@reach/router": "^1.3.4",
     "@vetixy/circular-std": "https://github.com/jondot/circular-std",
     "lodash": "^4.17.20",
+    "prop-types": "^15.7.2",
     "typescript": "^4.1.3",
     "zeroconf-typescript-eslint": "^2.4.0"
   }

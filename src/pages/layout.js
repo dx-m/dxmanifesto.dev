@@ -1,6 +1,12 @@
 import React from 'react'
 import '@vetixy/circular-std'
+import SEO from '../components/seo'
 
 export default function Layout({ children }) {
-  return <div>{children}</div>
+  return (
+    <div>
+      <SEO />
+      {children}
+    </div>
+  )
 }
