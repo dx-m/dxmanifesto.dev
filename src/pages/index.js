@@ -28,7 +28,7 @@ const showCompanies = false
 const menu = [
   { title: 'Manifesto', href: '#manifesto' },
   { title: 'People', href: '#people' },
-  { title: 'Github', href: 'https://github.com/dx-m/dx-manifesto' },
+  { title: 'Github', href: 'https://github.com/dx-m/dxmanifesto.dev' },
 ]
 const values = [
   {
@@ -148,7 +148,7 @@ const IndexPage = () => {
       <Section sx={{ my: '128px' }}>
         <Heading sx={{ textAlign: 'center' }} variant="headingLarge">
           <Link sx={{ color: 'text' }} href="#manifesto" name="manifesto">
-            The Deveoper Experience Manifesto
+            The Developer Experience Manifesto
           </Link>
         </Heading>
         {L.chunk(manifesto, 2).map((pair) => (
