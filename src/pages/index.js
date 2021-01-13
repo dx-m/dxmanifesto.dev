@@ -15,6 +15,7 @@ import {
   Row,
   Col,
   ManifestoItem,
+  Button,
 } from '../components'
 import Layout from './layout'
 
@@ -75,6 +76,23 @@ const IndexPage = () => {
               How to build amazing tools, that are productive, empowering,
               simple, and make developers happy.
             </Text>
+            <Box sx={{ mt: '64px' }}>
+              <Button
+                sx={{ mr: '16px' }}
+                as="a"
+                href="#manifesto"
+                variant="primary"
+              >
+                The Manifesto
+              </Button>
+              <Button
+                as="a"
+                href="https://github.com/dx-m/dxmanifesto.dev"
+                variant="secondary"
+              >
+                Edit on Github
+              </Button>
+            </Box>
           </Col>
           <Col sx={{ width: ['100%', '50%'] }}>
             <img src={workstation} alt="" />

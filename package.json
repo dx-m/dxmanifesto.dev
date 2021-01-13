@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
+    "deploy": "yarn build && netlify deploy --dir public --prod",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",

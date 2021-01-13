@@ -9,6 +9,23 @@ export default {
       color: 'accent',
     },
   },
+  buttons: {
+    primary: {
+      p: '12px 16px',
+      color: 'inverse',
+      bg: 'primary',
+      '&:hover': {
+        bg: 'primaryLighter',
+      },
+    },
+    secondary: {
+      p: '12px 16px',
+      color: 'primary',
+      bg: 'transparent',
+      border: '1px solid',
+      borderColor: 'primary',
+    },
+  },
   fonts: {
     body: 'CircularStd',
     heading: 'CircularStd',
@@ -24,6 +41,8 @@ export default {
     },
   },
   colors: {
+    primaryLighter: '#75d8ff',
+    primary: '#33c5ff',
     text: '#111',
     inverse: '#fff',
     background: '#fff',

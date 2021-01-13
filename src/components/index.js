@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import { jsx, Text, Flex, Box, Heading, Link } from 'theme-ui'
+import { jsx, Text, Flex, Box, Heading, Link, Button } from 'theme-ui'
 
+export { Button }
 export const Logo = ({ color = 'black' }) => (
   <svg
     width="90"
