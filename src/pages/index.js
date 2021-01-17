@@ -76,7 +76,14 @@ const IndexPage = () => {
               How to build amazing tools, that are productive, empowering,
               simple, and make developers happy.
             </Text>
-            <Box sx={{ mt: '64px' }}>
+            <Flex
+              sx={{
+                mt: '64px',
+                mb: '32px',
+
+                justifyContent: ['center', null, 'flex-start'],
+              }}
+            >
               <Button
                 sx={{ mr: '16px' }}
                 as="a"
@@ -92,7 +99,7 @@ const IndexPage = () => {
               >
                 Edit on Github
               </Button>
-            </Box>
+            </Flex>
           </Col>
           <Col sx={{ width: ['100%', '50%'] }}>
             <img src={workstation} alt="" />
